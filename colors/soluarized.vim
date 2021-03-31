@@ -3,7 +3,7 @@ lua << EOF
 
 --[[ Highlite, a Neovim colorscheme template.
 	* Author:     Iron-E (https://github.com/Iron-E)
-	* Repository: https://github.com/nvim-highlite
+	* Repository: https://github.com/nvim-soluarized
 
 	Initially forked from vim-rnb, a Vim colorsheme template:
 	* Author:        Romain Lafourcade (https://github.com/romainl)
@@ -40,10 +40,10 @@ lua << EOF
 	| foo_bar           | foo_bar     | foo_bar.lua       |
 
 	Rename the following files:
-	* `colors/highlite.vim`
-	* `lua/highlite.lua`
+	* `colors/soluarized.vim`
+	* `lua/soluarized.lua`
 
-	Where 'highlite' is the name of your colorscheme.
+	Where 'soluarized' is the name of your colorscheme.
 
 	TIP: If you are on a Unix-based system (or have WSL on Windows) you can use the setup script at the root of this repo.
 	     See the README for more details.
@@ -58,7 +58,7 @@ lua << EOF
 ]]
 
 -- This is the name of your colorscheme which will be used as per |g:colors_name|.
-vim.g.colors_name = 'highlite'
+vim.g.colors_name = 'soluarized'
 
 --[[ Step 3: Colors
 	Next you will define all of the colors that you will use for the color scheme.
@@ -214,7 +214,7 @@ local purple_light = {'#af60af', 63,  'magenta'}
 	end
 ```
 
-	The function will be executed by |highlite| and transformed into the
+	The function will be executed by |soluarized| and transformed into the
 	expected result.
 	____________________________________________________________________________
 
@@ -909,7 +909,7 @@ local terminal_ansi_colors = {
 --[[ Step 5: Sourcing
 	When you wish to load your colorscheme, simply add this folder with a plugin manager
 	and then use `colorscheme <your colorscheme name>`. For example, in my configuration,
-	I source highlite by using `colorscheme highlite`.
+	I source soluarized by using `colorscheme soluarized`.
 
 	These online resources can help you design your colorscheme:
 
