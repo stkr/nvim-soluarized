@@ -3,7 +3,7 @@ lua << EOF
 
 --[[ Highlite, a Neovim colorscheme template.
 	* Author:     Iron-E (https://github.com/Iron-E)
-	* Repository: https://github.com/nvim-soluarized
+	* Repository: https://github.com/Iron-E/nvim-soluarized
 
 	Initially forked from vim-rnb, a Vim colorsheme template:
 	* Author:        Romain Lafourcade (https://github.com/romainl)
@@ -82,40 +82,39 @@ vim.g.colors_name = 'soluarized'
 	NOTE: |Replace-mode| will probably be useful here.
 ]]
 
-local black       = {'#202020', 0,   'black'}
-local gray        = {'#808080', 244, 'gray'}
-local gray_dark   = {'#353535', 236, 'darkgrey'}
-local gray_darker = {'#505050', 244, 'gray'}
-local gray_light  = {'#c0c0c0', 251, 'gray'}
-local white       = {'#ffffff', 15,  'white'}
+local back    = {'#002b36', 235, 8}
+local base0   = {'#839496', 246, 12}
+local base00  = {'#657b83', 66, 11}
+local base01  = {'#586e75', 242, 10}
+local base02  = {'#073642', 236, 0}
+local base1   = {'#93a1a1', 247, 14}
+local base2   = {'#eee8d5', 254, 7}
+local base3   = {'#fdf6e3', 230, 15}
+local blue    = {'#268bd2', 32, 4}
+local cyan    = {'#2aa198', 37, 6}
+local green   = {'#859900', 106, 2}
+local magenta = {'#d33682', 162, 5}
+local orange  = {'#cb4b16', 166, 9}
+local red     = {'#dc322f', 160, 1}
+local violet  = {'#6c71c4', 61, 13}
+local yellow  = {'#b58900', 136, 3}
 
-local tan = {'#f4c069', 180, 'darkyellow'}
-
-local red       = {'#ee4a59', 196, 'red'}
-local red_dark  = {'#a80000', 124, 'darkred'}
-local red_light = {'#ff4090', 203, 'red'}
-
-local orange       = {'#ff8900', 208, 'darkyellow'}
-local orange_light = {'#f0af00', 214, 'yellow'}
-
-local yellow = {'#f0df33', 220, 'yellow'}
-
-local green_dark  = {'#70d533', 83, 'darkgreen'}
-local green       = {'#22ff22', 72, 'green'}
-local green_light = {'#99ff99', 72, 'green'}
-local turqoise    = {'#2bff99', 33, 'green'}
-
-local blue = {'#7766ff', 63, 'blue'}
-local cyan = {'#33dbc3', 87, 'cyan'}
-local ice  = {'#95c5ff', 63, 'cyan'}
-local teal = {'#60afff', 38, 'darkblue'}
-
-local magenta      = {'#d5508f', 126, 'magenta'}
-local magenta_dark = {'#bb0099', 126, 'darkmagenta'}
-local pink         = {'#ffa6ff', 162, 'magenta'}
-local pink_light   = {'#ffb7b7', 38,  'white'}
-local purple       = {'#cf55f0', 129, 'magenta'}
-local purple_light = {'#af60af', 63,  'magenta'}
+local back_light    = {'#fdf6e3', 230, 15}
+local base0_light   = {'#657b83', 66, 11}
+local base00_light  = {'#839496', 246, 12}
+local base01_light  = {'#93a1a1', 247, 14}
+local base02_light  = {'#eee8d5', 254, 7}
+local base1_light   = {'#586e75', 242, 10}
+local base2_light   = {'#073642', 236, 0}
+local base3_light   = {'#002b36', 235, 8}
+local blue_light    = {'#268bd2', 32, 4}
+local cyan_light    = {'#2aa198', 37, 6}
+local green_light   = {'#859900', 106, 2}
+local magenta_light = {'#d33682', 162, 5}
+local orange_light  = {'#cb4b16', 166, 9}
+local red_light     = {'#dc322f', 160, 1}
+local violet_light  = {'#6c71c4', 61, 13}
+local yellow_light  = {'#b58900', 136, 3}
 
 --[[ Step 4: highlights
 	You can define highlight groups like this:
@@ -887,23 +886,40 @@ local highlight_groups = {
 	this will inevitably cause usability issues so… be careful.
 ]]
 
-local terminal_ansi_colors = {
-	[1]  = black,
-	[2]  = red_dark,
-	[3]  = green_dark,
-	[4]  = orange,
+local terminal_ansi_colors = vim.o.background == 'dark' and {
+	[1]  = base02,
+	[2]  = red,
+	[3]  = green,
+	[4]  = yellow,
 	[5]  = blue,
-	[6]  = magenta_dark,
-	[7]  = teal,
-	[8]  = gray,
-	[9]  = gray_dark,
-	[10] = red,
-	[11] = green,
-	[12] = yellow,
-	[13] = turqoise,
-	[14] = purple,
-	[15] = cyan,
-	[16] = gray_light
+	[6]  = magenta,
+	[7]  = cyan,
+	[8]  = base2,
+	[9]  = base03,
+	[10] = orange,
+	[11] = base01,
+	[12] = base00,
+	[13] = base0,
+	[14] = violet,
+	[15] = base1,
+	[16] = base3,
+} or {
+	[1]  = base02_light,
+	[2]  = red_light,
+	[3]  = green_light,
+	[4]  = yellow_light,
+	[5]  = blue_light,
+	[6]  = magenta_light,
+	[7]  = cyan_light,
+	[8]  = base2_light,
+	[9]  = base03_light,
+	[10] = orange_light,
+	[11] = base01_light,
+	[12] = base00_light,
+	[13] = base0_light,
+	[14] = violet_light,
+	[15] = base1_light,
+	[16] = base3_light,
 }
 
 --[[ Step 5: Sourcing
