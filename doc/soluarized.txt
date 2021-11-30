@@ -1,58 +1,56 @@
-*highlite.txt*        Plugin for maintaining colorschemes
-*highlite*
+*soluarized.txt*        Plugin for maintaining colorschemes
+*soluarized*
 
 Author: Iron-E – https://github.com/Iron-E & https://gitlab.com/Iron_E
-Web: https://github.com/Iron-E/nvim-highlite
+Web: https://github.com/Iron-E/nvim-soluarized
 
-|highlite| is a plugin for creating and maintaining colorschemes. It can
-be configured by cloning the repository and following the README, or
-individually used to comprehensively highlight groups with its functions.
+|soluarized| is a colorscheme based on Iron-E/nvim-highlite.
 
 ==============================================================================
-TABLE OF CONTENTS                                                 *highlite-toc*
+TABLE OF CONTENTS                                                 *soluarized-toc*
 
-1. Requirements ............ |highlite-requirements|
-2. Usage ................... |highlite-usage|
-3. FAQ ..................... |highlite-faq|
+1. Requirements ............ |soluarized-requirements|
+2. Usage ................... |soluarized-usage|
+3. FAQ ..................... |soluarized-faq|
 
 ==============================================================================
-REQUIREMENTS                                          *highlite-requirements*
+REQUIREMENTS                                          *soluarized-requirements*
 
 - Neovim 0.5+
 
 ==============================================================================
-USAGE                                                           *highlite-usage*
+USAGE                                                           *soluarized-usage*
 
-                                                              *highlite.group()*
-`highlite`.group({group_name})                                  *highlite-group()*
+                                                              *soluarized.group()*
+`soluarized`.group({group_name})                                  *soluarized-group()*
 
-	Convert a pre-existing |highlight-group| into a format that |highlite|
+	Convert a pre-existing |highlight-group| into a format that |soluarized|
 	recognizes.
 
 	Note: the |highlight-group| must have been either:
 		- |:highlight|ed.
-		- |highlite-highlight|ed.
+		- |soluarized-highlight|ed.
 
 	Parameters: ~
 		{group_name}  A `string` which is the |highlight-group| to convert.
 
 	Return: ~
 		- A `table` which can be used as the {attributes} parameter for
-		  |highlite.highlight()|.
+		  |soluarized.highlight()|.
 
 	Example: ~
 >
-	local highlite = require('highlite')
+	local soluarized = require('soluarized')
 
 	-- get the 'Error' highlight group
-	local hl_error = highlite.group('Error')
+	local hl_error = soluarized.group('Error')
 
 	-- Define 'ErrorMsg' as foreground = background of 'Error'
-	highlite.highlight('ErrorMsg', {fg=hl_error.bg, bg=BG})
+	soluarized.highlight('ErrorMsg', {fg=hl_error.bg, bg=BG})
 <
 
-                                                          *highlite.highlight()*
-`highlite`.highlight({group}, {attributes})                 *highlite-highlight()*
+                                                          *soluarized.highlight()*
+`soluarized`.highlight({group}, {attributes})                 *soluarized-highlight()*
 
 	Highlight some {group} according to its {attributes}.
 
@@ -81,22 +79,22 @@ USAGE                                                           *highlite-usage*
 
 	Example: ~
 >
-		local highlite = require('highlite')
+		local soluarized = require('soluarized')
 
 		local yellow = {'#f0df33', 220, 'yellow'}
 
 		-- Highlight a new group
-		highlite.highlight('Todo', {fg=yellow, style={'bold', 'underline'}})
+		soluarized.highlight('Todo', {fg=yellow, style={'bold', 'underline'}})
 		-- Link a grou
-		highlite.highlight('Identifier', 'Todo')
+		soluarized.highlight('Identifier', 'Todo')
 <
 
 	See also: ~
 		|group-names|  Additional semantic highlighting groups.
 
-                                                 *highlite:highlight_terminal()*
-                                                 *highlite-highlight_terminal()*
-`highlite`:highlight_terminal({terminal_ansi_colors})
+                                                 *soluarized:highlight_terminal()*
+                                                 *soluarized-highlight_terminal()*
+`soluarized`:highlight_terminal({terminal_ansi_colors})
 
 	Override the |terminal| colors with a new table of {terminal_ansi_colors}.
 
@@ -128,9 +126,9 @@ USAGE                                                           *highlite-usage*
 
 	Example: ~
 >
-		local highlite = require('highlite')
+		local soluarized = require('soluarized')
 
-		highlite:highlight_terminal({
+		soluarized:highlight_terminal({
 			[1]  = {'#202020' , 0   , 'black'},
 			[2]  = {'#a80000' , 124 , 'darkred'},
 			[3]  = {'#50de60' , 83  , 'darkgreen'},
@@ -154,7 +152,7 @@ USAGE                                                           *highlite-usage*
 		|terminal-configuration|  Information about how the groups are set.
 
 ==============================================================================
-FAQ                                                             *highlite-faq*
+FAQ                                                             *soluarized-faq*
 
 E5108: Error executing lua [string ":lua"]:1: module '<colorscheme>' not found ~
 
@@ -165,19 +163,19 @@ Override the highlighting of one specific highlight group in my init.vim? ~
 When using this plugin, it is important to know that you cannot just run `:hi`
 on a highlight group and expect that its changes will be retained. You must
 attach them to the |ColorScheme| |autocmd-event|, as shown below: >
-	packadd nvim-highlite
+	packadd nvim-soluarized
 	set termguicolors "optional
 
 	" WRONG! Don't do this.
 	hi! Error guifg=#000000 guibg=#FFFFFF
 
 	" Do this instead.
-	augroup Highlite
-		" You can also use `highlite.highlight()` instead of `:hi!`
-		autocmd ColorScheme highlite hi! Error guifg=#000000 guibg=#FFFFFF
+	augroup soluarized
+		" You can also use `soluarized.highlight()` instead of `:hi!`
+		autocmd ColorScheme soluarized hi! Error guifg=#000000 guibg=#FFFFFF
 	augroup end
 
-	colorscheme highlite
+	colorscheme soluarized
 <
 
 Of course, substitute "highlight" with the name of your colorscheme.
