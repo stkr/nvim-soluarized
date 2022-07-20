@@ -124,7 +124,7 @@ local yellow  = {'#b58900', 136, 3}
 
 		-- Style can be 'bold', 'italic', and more. See |attr-list| for more information.
 		-- It can also have a color, and/or multiple <cterm>s.
-		[, style = <cterm>|{<cterm> (, <cterm>) [color=<color>]} ]
+		[, style = <cterm>|{<cterm> (, <cterm>) [color = <color>]} ]
 	}
 ```
 
@@ -140,11 +140,11 @@ local yellow  = {'#b58900', 136, 3}
 
 ```lua
 	SpellBad = { -- ← name of the highlight group
-		bg=NONE, -- background color
-		fg=red, -- foureground color
-		style={ -- the style
+		bg = NONE, -- background color
+		fg = red, -- foureground color
+		style = { -- the style
 			'undercurl', -- undercurl (squiggly line)
-			color=red -- the color of the undercurl
+			color = red -- the color of the undercurl
 		}
 	},
 	SpellWorse = 'SpellBad'
@@ -155,12 +155,12 @@ local yellow  = {'#b58900', 136, 3}
 
 ```lua
 	SpellBad = { -- ← name of the highlight group
-		bg=NONE, -- background color
-		fg=red, -- foureground color
-		style={ -- the style
+		bg = NONE, -- background color
+		fg = red, -- foureground color
+		style = { -- the style
 			'undercurl', -- undercurl (squiggly line)
 			'standout'
-			color=red -- the color of the undercurl
+			color = red -- the color of the undercurl
 		}
 	}
 ```
@@ -172,10 +172,10 @@ local yellow  = {'#b58900', 136, 3}
 
 ```lua
 	SpellBad = {
-		bg=NONE,
-		dark={fg=white},
-		light={fg=black},
-		style={'undercurl', color=red}
+		bg = NONE,
+		dark = {fg = white},
+		light = {fg = black},
+		style = {'undercurl', color = red}
 	}
 ```
 
@@ -198,9 +198,9 @@ local yellow  = {'#b58900', 136, 3}
 		inherited_style.color = red
 
 		return {
-			bg=NONE,
-			fg=NONE,
-			style=inherited_style
+			bg = NONE,
+			fg = NONE,
+			style = inherited_style
 		}
 	end
 ```
@@ -229,8 +229,8 @@ local NONE = {}
 -- This is the only highlight that must be defined separately.
 local highlight_group_normal =
 {
-	fg=base1_light, bg=back_light,
-	dark={fg=base1, bg=back},
+	fg = base1_light, bg = back_light,
+	dark = {fg = base1, bg = back},
 }
 
 -- This is where the rest of your highlights should go.
@@ -239,15 +239,15 @@ local highlight_groups =
 	--[[ 4.1. Text Analysis ]]
 	Comment =
 	{
-		fg=base01_light, bg=NONE, style='italic',
-		dark={fg=base01},
+		fg = base01_light, bg = NONE, style = 'italic',
+		dark = {fg = base01},
 	},
-	NonText = {fg=orange, bg=NONE, style='bold'},
-	EndOfBuffer = {fg=NONE, bg=NONE},
+	NonText = {fg = orange, bg = NONE, style = 'bold'},
+	EndOfBuffer = {fg = NONE, bg = NONE},
 	Whitespace  = 'NonText',
 
 	--[[ 4.1.1. Literals]]
-	Constant = {fg=cyan, bg=NONE},
+	Constant = {fg = cyan, bg = NONE},
 	String = 'Constant',
 	Character = 'Constant',
 	Number  = 'Constant',
@@ -255,11 +255,11 @@ local highlight_groups =
 	Float   = 'Constant',
 
 	--[[ 4.1.2. Identifiers]]
-	Identifier = {fg=blue, bg=NONE},
+	Identifier = {fg = blue, bg = NONE},
 	Function = 'Identifier',
 
 	--[[ 4.1.3. Syntax]]
-	Statement = {fg=green, bg=NONE},
+	Statement = {fg = green, bg = NONE},
 	Conditional = 'Statement',
 	Repeat   = 'Statement',
 	Label    = 'Statement',
@@ -269,51 +269,51 @@ local highlight_groups =
 	Noise = 'Delimiter',
 
 	--[[ 4.1.4. Metatextual Information]]
-	PreProc = {fg=orange, bg=NONE},
+	PreProc = {fg = orange, bg = NONE},
 	Include = 'PreProc',
 	Define = 'PreProc',
 	Macro  = 'PreProc',
 	PreCondit = 'PreProc',
 
 	--[[ 4.1.5. Semantics]]
-	Type = {fg=yellow, bg=NONE},
+	Type = {fg = yellow, bg = NONE},
 	StorageClass = 'Type',
 	Structure = 'Type',
 	Typedef = 'Type',
 
 	--[[ 4.1.6. Edge Cases]]
-	Special = {fg=orange, bg=NONE},
+	Special = {fg = orange, bg = NONE},
 	SpecialChar = 'Special',
-	SpecialKey = {fg=orange, bg=NONE, style='reverse'},
+	SpecialKey = {fg = orange, bg = NONE, style = 'reverse'},
 	Tag = 'Special',
 	Delimiter = 'Special',
 	SpecialComment = 'Special',
 	Debug = 'Special',
 
 	--[[ 4.1.7. Help Syntax]]
-	Underlined = {fg=violet, bg=NONE},
-	Ignore = {fg=NONE, bg=NONE},
+	Underlined = {fg = violet, bg = NONE},
+	Ignore = {fg = NONE, bg = NONE},
 	Error =
 	{
-		fg=red, bg=base3_light, style={'bold','reverse'},
-		dark={bg=base3},
+		fg = red, bg = base3_light, style = {'bold','reverse'},
+		dark = {bg = base3},
 	},
-	Todo = {fg=magenta, bg=NONE, style='bold'},
-	Hint = {fg=violet, bg=NONE, style='bold'},
-	Info = {fg=cyan, bg=NONE, style={'undercurl', color=cyan}},
-	Warning = {fg=yellow, bg=NONE, style={'undercurl', color=yellow}},
+	Todo = {fg = magenta, bg = NONE, style = 'bold'},
+	Hint = {fg = violet, bg = NONE, style = 'bold'},
+	Info = {fg = cyan, bg = NONE, style = {'undercurl', color = cyan}},
+	Warning = {fg = yellow, bg = NONE, style = {'undercurl', color = yellow}},
 
 	--[[ 4.2... Editor UI  ]]
 	--[[ 4.2.1. Status Line]]
 	StatusLine =
 	{
-		fg=base02_light, bg=base2_light, style='reverse',
-		dark={fg=base02, bg=base2},
+		fg = base02_light, bg = base2_light, style = 'reverse',
+		dark = {fg = base02, bg = base2},
 	},
 	StatusLineNC =
 	{
-		fg=base02_light, bg=base1_light, style='reverse',
-		dark={fg=base02, bg=base1},
+		fg = base02_light, bg = base1_light, style = 'reverse',
+		dark = {fg = base02, bg = base1},
 	},
 	StatusLineTerm = 'StatusLine',
 	StatusLineTermNC = 'StatusLineNC',
@@ -321,151 +321,151 @@ local highlight_groups =
 	--[[ 4.2.2. Separators]]
 	VertSplit =
 	{
-		fg=base01_light, bg=base02_light,
-		dark={fg=base01, bg=base02},
+		fg = base01_light, bg = base02_light,
+		dark = {fg = base01, bg = base02},
 	},
 	TabLineSel =
 	{
-		fg=base2_light, bg=base02_light,
-		dark={fg=base2, bg=base02},
+		fg = base2_light, bg = base02_light,
+		dark = {fg = base2, bg = base02},
 	},
 	TabLine =
 	{
-		fg=base01_light, bg=base02_light,
-		dark={fg=base01, bg=base02},
+		fg = base01_light, bg = base02_light,
+		dark = {fg = base01, bg = base02},
 	},
 	TabLineFill =
 	{
-		fg=base01_light, bg=base02_light,
-		dark={fg=base01, bg=base02},
+		fg = base01_light, bg = base02_light,
+		dark = {fg = base01, bg = base02},
 	},
-	Title = {fg=yellow, bg=NONE, style='bold'},
+	Title = {fg = yellow, bg = NONE, style = 'bold'},
 
 	--[[ 4.2.3. Conditional Line Highlighting]]
-	Conceal = {fg=blue, bg=NONE},
+	Conceal = {fg = blue, bg = NONE},
 	CursorLine =
 	{
-		fg=NONE, bg=base02_light,
-		dark={bg=base02},
+		fg = NONE, bg = base02_light,
+		dark = {bg = base02},
 	},
 	CursorLineNr =
 	{
-		fg=orange, bg=base02_light, style='bold',
-		dark={bg=base02},
+		fg = orange, bg = base02_light, style = 'bold',
+		dark = {bg = base02},
 	},
 	debugBreakpoint = 'ErrorMsg',
 	debugPC = 'ColorColumn',
 	LineNr  =
 	{
-		fg=base0_light, bg=base02_light,
-		dark={fg=base0, bg=base02},
+		fg = base0_light, bg = base02_light,
+		dark = {fg = base0, bg = base02},
 	},
 	QuickFixLine = 'Search',
 	Visual =
 	{
-		fg=base01_light, bg=back_light, style='reverse',
-		dark={fg=base01, bg=back},
+		fg = base01_light, bg = back_light, style = 'reverse',
+		dark = {fg = base01, bg = back},
 	},
 	VisualNOS =
 	{
-		fg=NONE, bg=base02_light, style='reverse',
-		dark={bg=base02},
+		fg = NONE, bg = base02_light, style = 'reverse',
+		dark = {bg = base02},
 	},
 
 	--[[ 4.2.4. Popup Menu]]
 	Pmenu =
 	{
-		fg=base1_light, bg=base02_light,
-		dark={fg=base1, bg=base02},
+		fg = base1_light, bg = base02_light,
+		dark = {fg = base1, bg = base02},
 	},
 	PmenuSbar =
 	{
-		fg=NONE, bg=base01_light,
-		dark={bg=base01},
+		fg = NONE, bg = base01_light,
+		dark = {bg = base01},
 	},
 	PmenuSel =
 	{
-		fg=base2_light, bg=base00_light,
-		dark={fg=base2, bg=base00},
+		fg = base2_light, bg = base00_light,
+		dark = {fg = base2, bg = base00},
 	},
 	PmenuThumb =
 	{
-		fg=NONE, bg=base0_light,
-		dark={bg=base0},
+		fg = NONE, bg = base0_light,
+		dark = {bg = base0},
 	},
 	WildMenu =
 	{
-		fg=base2_light, bg=base02_light, style='reverse',
-		dark={fg=base2, bg=base02},
+		fg = base2_light, bg = base02_light, style = 'reverse',
+		dark = {fg = base2, bg = base02},
 	},
 
 	--[[ 4.2.5. Folds]]
 	FoldColumn = {
-		fg=base0_light, bg=base02_light,
-		dark={fg=base0, bg=base02},
+		fg = base0_light, bg = base02_light,
+		dark = {fg = base0, bg = base02},
 	},
 	Folded =
 	{
-		fg=base0_light, bg=base02_light, style={'bold',color=back_light},
-		dark={fg=base0, bg=base02, style={'bold',color=back}},
+		fg = base0_light, bg = base02_light, style = {'bold',color = back_light},
+		dark = {fg = base0, bg = base02, style = {'bold',color = back}},
 	},
 
 	--[[ 4.2.6. Diffs]]
-	DiffAdd = {fg=green, bg=NONE, style='reverse'},
-	DiffChange = {fg=yellow, bg=NONE, style='reverse'},
-	DiffDelete = {fg=red, bg=NONE, style='reverse'},
-	DiffText = {fg=blue, bg=NONE, style='reverse'},
+	DiffAdd = {fg = green, bg = NONE, style = 'reverse'},
+	DiffChange = {fg = yellow, bg = NONE, style = 'reverse'},
+	DiffDelete = {fg = red, bg = NONE, style = 'reverse'},
+	DiffText = {fg = blue, bg = NONE, style = 'reverse'},
 
 	--[[ 4.2.7. Searching]]
-	IncSearch = {fg=orange, bg=NONE, style='standout'},
+	IncSearch = {fg = orange, bg = NONE, style = 'standout'},
 	MatchParen =
 	{
-		fg=base3_light, bg=base02_light, style='bold',
-		dark={fg=base3, bg=base02},
+		fg = base3_light, bg = base02_light, style = 'bold',
+		dark = {fg = base3, bg = base02},
 	},
-	Search = {fg=yellow, bg=NONE, style='reverse'},
+	Search = {fg = yellow, bg = NONE, style = 'reverse'},
 
 	--[[ 4.2.8. Spelling]]
 	SpellBad =
 	{
-		fg=violet, bg=base3_light, style={'reverse','undercurl', color=red},
-		dark={bg=base3},
+		fg = violet, bg = base3_light, style = {'reverse','undercurl', color = red},
+		dark = {bg = base3},
 	},
 	SpellCap = 'SpellBad',
 	SpellLocal =
 	{
-		fg=yellow, bg=base3_light, style={'reverse','undercurl',color=red},
-		dark={bg=base3},
+		fg = yellow, bg = base3_light, style = {'reverse','undercurl',color = red},
+		dark = {bg = base3},
 	},
 	SpellRare =
 	{
-		fg=cyan, bg=base3_light, style={'reverse','undercurl',color=red},
-		dark={bg=base3},
+		fg = cyan, bg = base3_light, style = {'reverse','undercurl',color = red},
+		dark = {bg = base3},
 	},
 
 	--[[ 4.2.9. Conditional Column Highlighting]]
 	ColorColumn =
 	{
-		fg=NONE, bg=base02_light,
-		dark={bg=base02}},
+		fg = NONE, bg = base02_light,
+		dark = {bg = base02}},
 	SignColumn =
 	{
-		fg=base0_light, bg=NONE,
-		dark={fg=base0},
+		fg = base0_light, bg = NONE,
+		dark = {fg = base0},
 	},
 
 	--[[ 4.2.10. Messages]]
 	ErrorMsg =
 	{
-		fg=red, bg=base3_light, style='reverse',
-		dark={bg=base3},
+		fg = red, bg = base3_light, style = 'reverse',
+		dark = {bg = base3},
 	},
 	HintMsg  = 'Hint',
 	InfoMsg  = 'Info',
-	ModeMsg = {fg=blue, bg=NONE},
-	MoreMsg = {fg=blue, bg=NONE},
-	WarningMsg = {fg=orange, bg=NONE, style='bold'},
-	Question = {fg=cyan, bg=NONE, style='bold'},
+	ModeMsg = {fg = blue, bg = NONE},
+	MoreMsg = {fg = blue, bg = NONE},
+	WarningMsg = {fg = orange, bg = NONE, style = 'bold'},
+	Question = {fg = cyan, bg = NONE, style = 'bold'},
 
 	--[[ 4.2.11. LSP ]]
 	LspDiagnosticsDefaultError = 'Error',
@@ -492,24 +492,28 @@ local highlight_groups =
 	--[[ 4.2.12. Cursor ]]
 	Cursor =
 	{
-		fg=base3_light, bg=blue,
-		dark={fg=base3},
+		fg = base3_light, bg = blue,
+		dark = {fg = base3},
 	},
-	CursorIM = {fg=NONE, bg=FG},
+	CursorIM =
+	{
+		fg = NONE, bg = highlight_group_normal.fg,
+		dark = {bg = highlight_group_normal.dark.fg},
+	},
 	CursorColumn =
 	{
-		fg=NONE, bg=base02_light,
-		dark={bg=base02},
+		fg = NONE, bg = base02_light,
+		dark = {bg = base02},
 	},
 	TermCursor = 'Cursor',
 	TermCursorNC =
 	{
-		fg=back_light, bg=base01_light,
-		dark={fg=back, bg=base01},
+		fg = back_light, bg = base01_light,
+		dark = {fg = back, bg = base01},
 	},
 
 	--[[ 4.2.13. Misc ]]
-	Directory = {fg=blue, bg=NONE},
+	Directory = {fg = blue, bg = NONE},
 
 	--[[ 4.3. Programming Languages
 		Everything in this section is OPTIONAL. Feel free to remove everything
@@ -588,7 +592,7 @@ local highlight_groups =
 	scssElse           = 'scssIf',
 	scssMixinName      = function(self)
 		local super = self.cssClassName
-		return {bg=super.bg, fg=super.fg, style='Italic'}
+		return {bg = super.bg, fg = super.fg, style = 'italic'}
 	end,
 	scssIf             = 'PreCondit',
 	scssInclude        = 'Include',
@@ -630,7 +634,7 @@ local highlight_groups =
 
 	--[[ 4.3.8. HTML ]]
 	htmlArg    = 'Label',
-	htmlBold   = {fg=highlight_group_normal.fg, style='bold'},
+	htmlBold   = {fg = highlight_group_normal.fg, style = 'bold'},
 	htmlTitle  = 'htmlBold',
 	htmlEndTag = 'htmlTag',
 	htmlH1 = 'markdownH1',
@@ -639,7 +643,7 @@ local highlight_groups =
 	htmlH4 = 'markdownH4',
 	htmlH5 = 'markdownH5',
 	htmlH6 = 'markdownH6',
-	htmlItalic  = {style='italic'},
+	htmlItalic  = {style = 'italic'},
 	htmlSpecialTagName = 'Keyword',
 	htmlTag  = 'Special',
 	htmlTagN = 'Typedef',
@@ -683,7 +687,7 @@ local highlight_groups =
 	luaSpecialValue = 'Function',
 	luaStringLongTag = function(self)
 		local delimiter = self.Delimiter
-		return {bg=delimiter.bg, fg=delimiter.fg, style='italic'}
+		return {bg = delimiter.bg, fg = delimiter.fg, style = 'italic'}
 	end,
 
 	--[[ 4.3.12. Make ]]
@@ -693,12 +697,12 @@ local highlight_groups =
 	--[[ 4.3.13. Markdown ]]
 	markdownCode = 'mkdCode',
 	markdownCodeDelimiter = 'mkdCodeDelimiter',
-	markdownH1 = {fg=red, style='bold'},
-	markdownH2 = {fg=orange, style='bold'},
-	markdownH3 = {fg=yellow, style='bold'},
-	markdownH4 = {fg=green, style='bold'},
-	markdownH5 = {fg=cyan, style='bold'},
-	markdownH6 = {fg=violet, style='bold'},
+	markdownH1 = {fg = red, style = 'bold'},
+	markdownH2 = {fg = orange, style = 'bold'},
+	markdownH3 = {fg = yellow, style = 'bold'},
+	markdownH4 = {fg = green, style = 'bold'},
+	markdownH5 = {fg = cyan, style = 'bold'},
+	markdownH6 = {fg = violet, style = 'bold'},
 	markdownLinkDelimiter = 'Delimiter',
 	markdownLinkTextDelimiter = 'markdownLinkDelimiter',
 	markdownUrl = 'Underlined',
@@ -712,7 +716,7 @@ local highlight_groups =
 	mkdItalic  = 'mkdBold',
 	mkdLineBreak = 'NonText',
 	mkdListItem  = 'Special',
-	mkdRule = function(self) return {fg=self.Ignore.fg, style={'underline', color=self.Delimiter.fg}} end,
+	mkdRule = function(self) return {fg = self.Ignore.fg, style = {'underline', color = self.Delimiter.fg}} end,
 
 	--[[ 4.3.20. Python ]]
 	pythonBrackets    = 'Delimiter',
@@ -878,7 +882,7 @@ local highlight_groups =
 	helpHyperTextJump = 'Underlined',
 
 	--[[ 4.3.38 Man ]]
-	-- manBold = function(self) return vim.tbl_extend('force', self.mkdCode, {style='nocombine'}) end,
+	-- manBold = function(self) return vim.tbl_extend('force', self.mkdCode, {style = 'nocombine'}) end,
 	manOptionDesc = 'Special',
 	manReference = 'Tag',
 	manUnderline = 'Label',
@@ -904,7 +908,7 @@ local highlight_groups =
 	--[[ 4.4.2. coc.nvim ]]
 	CocErrorHighlight = 'DiagnosticUnderlineError',
 	CocErrorSign = 'DiagnosticSignError',
-	CocHintHighlight  = 'DiagnosticUnderlineHint  ',
+	CocHintHighlight  = 'DiagnosticUnderlineHint',
 	CocHintSign  = 'DiagnosticSignHint',
 	CocInfoHighlight  = 'DiagnosticUnderlineInfo',
 	CocInfoSign  = 'DiagnosticSignInfo',
@@ -919,7 +923,7 @@ local highlight_groups =
 	GitGutterAdd    = {fg = green},
 	GitGutterChange = {fg = yellow},
 	GitGutterDelete = {fg = red},
-	GitGutterChangeDelete = {fg=orange},
+	GitGutterChangeDelete = {fg = orange},
 
 	SignifySignAdd    = 'GitGutterAdd',
 	SignifySignChange = 'GitGutterChange',
@@ -931,8 +935,8 @@ local highlight_groups =
 	GitSignsDelete = 'GitGutterDelete',
 
 	--[[ 4.4.5. vim-indent-guides ]]
-	IndentGuidesOdd  = {bg=base0_light, dark={bg=base0}},
-	IndentGuidesEven = {bg=base1_light, dark={bg=base1}},
+	IndentGuidesOdd  = {bg = base0_light, dark = {bg = base0}},
+	IndentGuidesEven = {bg = base1_light, dark = {bg = base1}},
 
 	--[[ 4.4.7. NERDTree ]]
 	NERDTreeCWD = 'Label',
@@ -955,27 +959,33 @@ local highlight_groups =
 
 	--[[ 4.4.9. barbar.nvim ]]
 	BufferCurrent       = 'TabLineSel',
-	BufferCurrentIndex  = function(self) return {fg=self.InfoMsg.fg, bg=self.BufferCurrent.bg} end,
-	BufferCurrentMod    = {fg=yellow, bg=back_light, style='bold', dark={bg=back}},
+	BufferCurrentIndex  = function(self) return {fg = self.InfoMsg.fg, bg = self.BufferCurrent.bg} end,
+	BufferCurrentMod    = {fg = yellow, bg = back_light, style = 'bold', dark = {bg = back}},
 	BufferCurrentSign   = 'HintMsg',
 	BufferCurrentTarget = 'BufferCurrentSign',
 
 	BufferInactive       = 'BufferVisible',
-	BufferInactiveIndex  = function(self) return {fg=self.InfoMsg.fg, bg=self.BufferInactive.bg} end,
+	BufferInactiveIndex  = function(self) return {fg = self.InfoMsg.fg, bg = self.BufferInactive.bg} end,
 	BufferInactiveMod    = 'BufferVisibleMod',
 	BufferInactiveSign   = 'BufferVisibleSign',
 	BufferInactiveTarget = 'BufferVisibleTarget',
 
-	BufferTabpages    = {fg=highlight_group_normal.bg, bg=FG, style='bold'},
+	BufferTabpages    =
+	{
+		fg = highlight_group_normal.bg,
+		bg = highlight_group_normal.fg,
+		dark = {bg = highlight_group_normal.dark.fg},
+		style = 'bold',
+	},
 	BufferTabpageFill = 'TabLineFill',
 
 	BufferVisible       = 'TabLine',
-	BufferVisibleIndex  = function(self) return {fg=self.InfoMsg.fg, bg=self.BufferVisible.bg} end,
-	BufferVisibleMod    = function(self) return {fg=base3_light, bg=self.BufferVisible.bg, style='italic', dark={bg=base3}} end,
+	BufferVisibleIndex  = function(self) return {fg = self.InfoMsg.fg, bg = self.BufferVisible.bg} end,
+	BufferVisibleMod    = function(self) return {fg = base3_light, bg = self.BufferVisible.bg, style = 'italic', dark = {bg = base3}} end,
 	BufferVisibleSign   = 'BufferVisible',
 	BufferVisibleTarget = function(self)
 		local super = self.BufferVisibleMod
-		return {fg=super.fg, bg=super.bg, style='bold'}
+		return {fg = super.fg, bg = super.bg, style = 'bold'}
 	end,
 
 	--[[ 4.4.10. vim-sandwhich ]]
@@ -993,26 +1003,26 @@ local highlight_groups =
 	TargetWord = 'Title',
 
 	--[[ 4.4.13. indent-blankline.nvim ]]
-	IndentBlanklineChar = function(self) return vim.tbl_extend('force', self.Whitespace, {style='nocombine'}) end,
+	IndentBlanklineChar = function(self) return vim.tbl_extend('force', self.Whitespace, {style = 'nocombine'}) end,
 	IndentBlanklineSpaceChar = 'IndentBlanklineChar',
 
 	--[[ 4.4.14. trouble.nvim ]]
-	TroubleCount = function(self) return vim.tbl_extend('force', self.Number, {style='underline'}) end,
+	TroubleCount = function(self) return vim.tbl_extend('force', self.Number, {style = 'underline'}) end,
 
 	--[[ 4.4.15. todo-comments.nvim ]]
-	TodoFgFIX = function(self) return {fg=self.ErrorMsg.fg} end,
-	TodoFgHACK = function(self) return {fg=self.Todo.fg} end,
+	TodoFgFIX = function(self) return {fg = self.ErrorMsg.fg} end,
+	TodoFgHACK = function(self) return {fg = self.Todo.fg} end,
 	TodoFgNOTE = 'HintMsg',
 	TodoFgPERF = 'InfoMsg',
-	TodoFgTODO = {fg=cyan, style='italic'},
-	TodoFgWARN = function(self) return {fg=self.WarningMsg.fg} end,
+	TodoFgTODO = {fg = cyan, style = 'italic'},
+	TodoFgWARN = function(self) return {fg = self.WarningMsg.fg} end,
 
-	TodoBgFIX = function(self) return {fg=back, bg=self.ErrorMsg.fg, style={'bold', 'italic', 'nocombine'}} end,
-	TodoBgHACK = function(self) return {fg=back, bg=self.Todo.fg, style={'bold', 'italic', 'nocombine'}} end,
-	TodoBgNOTE = function(self) return {fg=back, bg=self.Hint.fg, style={'bold', 'italic', 'nocombine'}} end,
-	TodoBgPERF = function(self) return {fg=back, bg=self.Info.fg, style={'bold', 'italic', 'nocombine'}} end,
-	TodoBgTODO = {fg=back, bg=cyan, style={'bold', 'italic', 'nocombine'}},
-	TodoBgWARN = function(self) return {fg=back, bg=self.Warning.fg, style={'bold', 'italic', 'nocombine'}} end,
+	TodoBgFIX = function(self) return {fg = back, bg = self.ErrorMsg.fg, style = {'bold', 'italic', 'nocombine'}} end,
+	TodoBgHACK = function(self) return {fg = back, bg = self.Todo.fg, style = {'bold', 'italic', 'nocombine'}} end,
+	TodoBgNOTE = function(self) return {fg = back, bg = self.Hint.fg, style = {'bold', 'italic', 'nocombine'}} end,
+	TodoBgPERF = function(self) return {fg = back, bg = self.Info.fg, style = {'bold', 'italic', 'nocombine'}} end,
+	TodoBgTODO = {fg = back, bg = cyan, style = {'bold', 'italic', 'nocombine'}},
+	TodoBgWARN = function(self) return {fg = back, bg = self.Warning.fg, style = {'bold', 'italic', 'nocombine'}} end,
 
 	TodoSignFIX  = 'TodoFgFIX',
 	TodoSignHACK = 'TodoFgHACK',
@@ -1025,7 +1035,7 @@ local highlight_groups =
 	CmpDocumentationBorder = 'FloatBorder',
 	CmpItemAbbrDefault = 'Ignore',
 	CmpItemAbbrMatchDefault = 'Underlined',
-	CmpItemAbbrMatchFuzzyDefault = {fg=highlight_group_normal.fg, style={'nocombine', 'underline'}},
+	CmpItemAbbrMatchFuzzyDefault = {fg = highlight_group_normal.fg, style = {'nocombine', 'underline'}},
 	CmpItemKindDefault = 'Type',
 	CmpItemKindClassDefault = 'CmpItemKindStructDefault',
 	CmpItemKindColorDefault = 'Label',
@@ -1053,7 +1063,7 @@ local highlight_groups =
 	CmpItemKindValueDefault = 'CmpItemKindConstantDefault',
 	CmpItemKindVariableDefault = 'Identifier',
 	CmpItemMenuDefault = 'NormalFloat',
-	CmpItemMenuThumb = {fg=base3_light, style='bold', dark={fg=base3}},
+	CmpItemMenuThumb = {fg = base3_light, style = 'bold', dark = {fg = base3}},
 
 	--[[ 4.4.17. packer.nvim ]]
 	packerFail = 'ErrorMsg',
@@ -1061,16 +1071,16 @@ local highlight_groups =
 	packerPackageNotLoaded = 'Ignore',
 	packerStatusFail = 'Statement',
 	packerStatusSuccess = 'packerStatusFail',
-	packerSuccess = function(self) return {fg=green, style=self.packerFail.style} end,
+	packerSuccess = function(self) return {fg = green, style = self.packerFail.style} end,
 
 	--[[ 4.4.18. nvim-tree ]]
-	NvimTreeGitDeleted = function(self) return {fg=self.DiffDelete.bg, bg=NONE} end,
-	NvimTreeGitDirty = {fg=orange, bg=NONE},
+	NvimTreeGitDeleted = function(self) return {fg = self.DiffDelete.bg, bg = NONE} end,
+	NvimTreeGitDirty = {fg = orange, bg = NONE},
 	NvimTreeGitIgnored = 'Ignore',
 	NvimTreeGitMerge = 'NvimTreeGitRenamed',
-	NvimTreeGitNew = function(self) return {fg=self.DiffAdd.bg, bg=NONE} end,
-	NvimTreeGitRenamed = function(self) return {fg=self.DiffChange.bg, bg=NONE} end,
-	NvimTreeGitStaged = {fg=cyan, bg=NONE},
+	NvimTreeGitNew = function(self) return {fg = self.DiffAdd.bg, bg = NONE} end,
+	NvimTreeGitRenamed = function(self) return {fg = self.DiffChange.bg, bg = NONE} end,
+	NvimTreeGitStaged = {fg = cyan, bg = NONE},
 }
 
 --[[ Step 5: Terminal Colors
