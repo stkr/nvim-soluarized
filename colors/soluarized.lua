@@ -363,7 +363,7 @@ local highlight_groups =
 	QuickFixLine = 'Search',
 	Visual =
 	{
-		fg = base01_light, bg = back_light, style = 'reverse',
+		fg = back_light, bg = base01_light,
 		dark = {fg = base01, bg = back},
 	},
 	VisualNOS =
@@ -417,18 +417,18 @@ local highlight_groups =
 	DiffText = {fg = blue, bg = NONE, style = 'reverse'},
 
 	--[[ 4.2.7. Searching]]
-	IncSearch = {fg = orange, bg = NONE, style = 'standout'},
+	IncSearch = {fg = back_light, bg = orange},
 	MatchParen =
 	{
 		fg = base3_light, bg = base02_light, style = 'bold',
 		dark = {fg = base3, bg = base02},
 	},
-	Search = {fg = yellow, bg = NONE, style = 'reverse'},
+	Search = {fg = back_light, bg = yellow},
 
 	--[[ 4.2.8. Spelling]]
 	SpellBad =
 	{
-		fg = violet, bg = base3_light, style = {'reverse','undercurl', color = red},
+		fg = violet, bg = NONE, style = {'reverse','undercurl', color = red},
 		dark = {bg = base3},
 	},
 	SpellCap = 'SpellBad',
