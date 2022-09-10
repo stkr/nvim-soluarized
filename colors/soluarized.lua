@@ -1081,6 +1081,19 @@ local highlight_groups =
 	NvimTreeGitNew = function(self) return {fg = self.DiffAdd.bg, bg = NONE} end,
 	NvimTreeGitRenamed = function(self) return {fg = self.DiffChange.bg, bg = NONE} end,
 	NvimTreeGitStaged = {fg = cyan, bg = NONE},
+
+	--[[ 4.4.18. Diffview ]]
+    -- DiffviewFilePanelRootPath
+    -- DiffviewDim1
+    -- DiffviewFilePanelPath
+    DiffviewFilePanelFileName = highlight_group_normal,
+    -- DiffviewFilePanelCounter
+    -- DiffviewFilePanelTitle
+    -- DiffviewSecondary
+    -- DiffviewPrimary
+    -- DiffviewNonText
+    -- DiffviewFilePanelInsertions
+    -- DiffviewFilePanelDeletions
 }
 
 --[[ Step 5: Terminal Colors
