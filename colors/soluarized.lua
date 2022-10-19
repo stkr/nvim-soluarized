@@ -1082,7 +1082,7 @@ local highlight_groups =
 	NvimTreeGitRenamed = function(self) return {fg = self.DiffChange.bg, bg = NONE} end,
 	NvimTreeGitStaged = {fg = cyan, bg = NONE},
 
-	--[[ 4.4.18. Diffview ]]
+	--[[ 4.4.19. Diffview ]]
     -- DiffviewFilePanelRootPath
     -- DiffviewDim1
     -- DiffviewFilePanelPath
@@ -1094,6 +1094,23 @@ local highlight_groups =
     -- DiffviewNonText
     -- DiffviewFilePanelInsertions
     -- DiffviewFilePanelDeletions
+
+    --[[ 4.4.20. nvim-notify ]]
+    NotifyERRORBorder = { fg=red },
+    NotifyWARNBorder  = { fg=orange },
+    NotifyINFOBorder  = { fg=green },
+    NotifyDEBUGBorder = { fg=violet },
+    NotifyTRACEBorder = { fg=cyan },
+    NotifyERRORIcon   = { fg=red },
+    NotifyWARNIcon    = { fg=orange },
+    NotifyINFOIcon    = { fg=green },
+    NotifyDEBUGIcon   = { fg=violet },
+    NotifyTRACEIcon   = { fg=cyan },
+    NotifyERRORTitle  = { fg=red },
+    NotifyWARNTitle   = { fg=orange },
+    NotifyINFOTitle   = { fg=green },
+    NotifyDEBUGTitle  = { fg=violet },
+    NotifyTRACETitle  = { fg=cyan },
 }
 
 --[[ Step 5: Terminal Colors
