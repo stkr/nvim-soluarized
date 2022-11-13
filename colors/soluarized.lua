@@ -108,6 +108,26 @@ local red     = {'#dc322f', 160, 1}
 local violet  = {'#6c71c4', 61, 13}
 local yellow  = {'#b58900', 136, 3}
 
+-- Useful highligh colors over the default background. those were created by putting 
+-- a layer of the respective color with 20% opacity over the "back_light"
+local blue_20_light    = {'#e6e6e0', 'NONE', 'NONE'}
+local cyan_20_light    = {'#e6e8d7', 'NONE', 'NONE'}
+local green_20_light   = {'#ebe7ce', 'NONE', 'NONE'}
+local magenta_20_light = {'#f5e0d4', 'NONE', 'NONE'}
+local orange_20_light  = {'#f4e1ce', 'NONE', 'NONE'}
+local red_20_light     = {'#f7e0ce', 'NONE', 'NONE'}
+local violet_20_light  = {'#e9e3dd', 'NONE', 'NONE'}
+local yellow_20_light  = {'#f1e5ce', 'NONE', 'NONE'}
+
+local blue_40_light    = {'#cbd4dc', 'NONE', 'NONE'}
+local cyan_40_light    = {'#cbd9c9', 'NONE', 'NONE'}
+local green_40_light   = {'#d8d7b5', 'NONE', 'NONE'}
+local magenta_40_light = {'#edc6c4', 'NONE', 'NONE'}
+local orange_40_light  = {'#ebc9b5', 'NONE', 'NONE'}
+local red_40_light     = {'#f1c6b7', 'NONE', 'NONE'}
+local violet_40_light  = {'#d3ced7', 'NONE', 'NONE'}
+local yellow_40_light  = {'#e4d3b5', 'NONE', 'NONE'}
+
 --[[ Step 4: highlights
 	You can define highlight groups like this:
 
@@ -345,7 +365,7 @@ local highlight_groups =
 	Conceal = {fg = blue, bg = NONE},
 	CursorLine =
 	{
-		fg = NONE, bg = base02_light,
+		fg = NONE, bg = blue_20_light,
 		dark = {bg = base02},
 	},
 	CursorLineNr =
@@ -411,10 +431,10 @@ local highlight_groups =
 	},
 
 	--[[ 4.2.6. Diffs]]
-	DiffAdd = {fg = green, bg = NONE, style = 'reverse'},
-	DiffChange = {fg = yellow, bg = NONE, style = 'reverse'},
-	DiffDelete = {fg = red, bg = NONE, style = 'reverse'},
-	DiffText = {fg = blue, bg = NONE, style = 'reverse'},
+	DiffAdd = {bg = green_40_light},
+	DiffChange = {bg = yellow_40_light},
+	DiffDelete = {bg = red_40_light},
+	DiffText = {bg = blue_40_light},
 
 	--[[ 4.2.7. Searching]]
 	IncSearch = {fg = back_light, bg = orange},
@@ -1094,6 +1114,10 @@ local highlight_groups =
     -- DiffviewNonText
     -- DiffviewFilePanelInsertions
     -- DiffviewFilePanelDeletions
+    DiffviewStatusAdded = { fg = green },
+    DiffviewStatusDeleted = { fg = red },
+    DiffviewFilePanelInsertions = 'DiffviewStatusAdded',
+    DiffviewFilePanelDeletions = 'DiffviewStatusDeleted',
 
     --[[ 4.4.20. nvim-notify ]]
     NotifyERRORBorder = { fg=red },
